@@ -10,7 +10,10 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String publisher;
+
+    @OneToOne
+    private Publisher publisher;
+
     private String titel;
     private String isbn;
     @ManyToMany
@@ -21,13 +24,13 @@ public class Book {
     public Book() {
     }
 
-    public Book(String publisher, String titel, String isbn) {
+    public Book(Publisher publisher, String titel, String isbn) {
         this.publisher = publisher;
         this.titel = titel;
         this.isbn = isbn;
     }
 
-    public Book(String publisher, String titel, String isbn, Set<Author> authors) {
+    public Book(Publisher publisher, String titel, String isbn, Set<Author> authors) {
         this.publisher = publisher;
         this.titel = titel;
         this.isbn = isbn;
@@ -40,11 +43,11 @@ public class Book {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getPublisher() {
+    public Publisher getPublisher() {
         return publisher;
     }
 
-    public void setPublisher(String publisher) {
+    public void setPublisher(Publisher publisher) {
         this.publisher = publisher;
     }
 
