@@ -23,11 +23,11 @@ public class Publisher {
     public Publisher() {
     }
 
-    public String getCompantName() {
+    public String getCompanyName() {
         return companyName;
     }
 
-    public void setCompantName(String companyName) {
+    public void setCompanyName(String companyName) {
         this.companyName = companyName;
     }
 
